@@ -111,8 +111,19 @@ app.AppView = Backbone.View.extend({
 	//New
 	//If you hit return in the main input field, create new Todo model,
 	// persisting it to localStorage
-	createOnEnter: function(event){
-		_.invoke(app.Todos.completed(), 'destroy');
+
+	createOnEnter:function(event){
+		if(event.which !== ENTER_KEY || !this.$input.val().trim()){
+			return;
+		}
+		app.Todos.create(this.newAttributes());
+		this.$input.val('');
+	},
+
+	//New 
+	//Clear all completed todo items, destroying their models
+	clearCompleted: function(event){
+		_.invoke(app.Todos.completed(), 'destroy'); //get completed in {} form, call destroy
 		return false;
 	},
 
