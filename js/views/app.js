@@ -49,7 +49,7 @@ app.AppView = Backbone.View.extend({
 	//New
 	//Rerendering the app just means refreshing the statistics -- the rest 
 	//of the app doesn't change.
-	render:function(){
+	render: function(){
 		var completed = app.Todos().completed().length;
 		var remaining = app.Todos().remaining().length;
 
@@ -112,7 +112,7 @@ app.AppView = Backbone.View.extend({
 	//If you hit return in the main input field, create new Todo model,
 	// persisting it to localStorage
 
-	createOnEnter:function(event){
+	createOnEnter: function(event){
 		if(event.which !== ENTER_KEY || !this.$input.val().trim()){
 			return;
 		}

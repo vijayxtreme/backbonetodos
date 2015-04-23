@@ -31,32 +31,34 @@
 		<button class='destroy'></button>
 		<input class='edit' value='<%- title %>'>
 	</script>
-	<script type='text/template' id='stats-template'>
-		<span id='todo-count'><strong><%= remaining %></strong>
-		<%= remaining === 1 ? 'item' : 'items' %> left</span>
-		<ul id='filters'>
-			<li>
-				<a class='selected' href='#/'>All</a>
-			</li>
-			<li>
-				<a href='#/active'>Active</a>
-			</li>
-			<li>
-				<a href='#/completed'>Completed</a>
-			</li>
-		</ul>
-		<% if (completed) { %>
-			<button id='clear-completed'>Clear completed (<%= completed %>)</button>
-		<% } >
+
+	<script type="text/template" id="stats-template">
+			<span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+			<ul id="filters">
+				<li>
+					<a class="selected" href="#/">All</a>
+				</li>
+				<li>
+					<a href="#/active">Active</a>
+				</li>
+				<li>
+					<a href="#/completed">Completed</a>
+				</li>
+			</ul>
+			<% if (completed) { %>
+			<button id="clear-completed">Clear completed</button>
+			<% } %>
 	</script>
+	
 	<script src='js/lib/jquery.min.js'></script>
 	<script src='js/lib/underscore-min.js'></script>
 	<script src="js/lib/backbone-min.js"></script>
 	<script src='js/lib/backbone.localStorage.js'></script>
 	<script src='js/models/todo.js'></script>
 	<script src='js/collections/todos.js'></script>
-	<script src='js/views/app.js'></script>
+	<script src='js/views/todos.js'></script>	
 	<script src='js/routers/router.js'></script>
+	<script src='js/views/app.js'></script>	
 	<script src='js/app.js'></script>
 </body>
 </html>
